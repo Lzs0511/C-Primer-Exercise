@@ -15,6 +15,13 @@ public:
     }
 
     virtual ~Quote() = default;
+    virtual void debug(){
+        std::cout << "Class Quote:" << std::endl;
+        std::cout << "---- private:" << std::endl;
+        std::cout << "-------- std::string bookNo" << std::endl;
+        std::cout << "---- protected:" << std::endl;
+        std::cout << "-------- double price" << std::endl;
+    }
 private:
     std::string bookNo;
 protected:
@@ -26,7 +33,15 @@ public:
     Disc_quote1() = default;
     Disc_quote1(const std::string &, double, std::size_t, double);
     double net_price(std::size_t) const override;
-
+    virtual void debug(){
+        std::cout << "Class Disc_quote:" << std::endl;
+        std::cout << "---- private:" << std::endl;
+        // std::cout << "-------- std::string bookNo" << std::endl;
+        std::cout << "-------- std::size_t min_qty" << std::endl;
+        std::cout << "-------- double discount" << std::endl;
+        std::cout << "---- protected:" << std::endl;
+        std::cout << "-------- double price" << std::endl;
+    }
 private:
     std::size_t min_qty = 0;
     double discount = 0.0;
@@ -37,6 +52,15 @@ public:
     Bulk_quote() = default;
     Bulk_quote(const std::string &, double , std::size_t, double);
     double net_price(std::size_t) const override;
+    virtual void debug() override{
+        std::cout << "Class Bulk_quote:" << std::endl;
+        std::cout << "---- private:" << std::endl;
+        // std::cout << "-------- std::string bookNo" << std::endl;
+        std::cout << "-------- std::size_t min_qty" << std::endl;
+        std::cout << "-------- double discount" << std::endl;
+        std::cout << "---- protected:" << std::endl;
+        std::cout << "-------- double price" << std::endl;
+    }
 private:
     std::size_t min_qty = 0;
     double discount = 0.0;
